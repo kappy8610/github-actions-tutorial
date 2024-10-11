@@ -1,36 +1,36 @@
-# This is a basic workflow to help you get started with Actions
+# Actionsを使い始めるための基本的なワークフローです
 
 name: CI
 
-# Controls when the workflow will run
+# ワークフローの実行条件を制御します
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # "main"ブランチに対するプッシュやプルリクエストのイベントでワークフローをトリガーします
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Actionsタブから手動でこのワークフローを実行できるようにします
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# ワークフローの実行は、1つ以上のジョブで構成され、順次または並列で実行されます
 jobs:
-  # This workflow contains a single job called "build"
+  # このワークフローには "build" という単一のジョブが含まれています
   build:
-    # The type of runner that the job will run on
+    # ジョブを実行するランナーのタイプを指定します
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # ステップはジョブの一部として実行される一連のタスクを表します
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # リポジトリを$GITHUB_WORKSPACEにチェックアウトし、ジョブがアクセスできるようにします
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
+      # ランナーのシェルを使って単一のコマンドを実行します
+      - name: ワンラインスクリプトを実行
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # ランナーのシェルを使って複数行のコマンドを実行します
+      - name: 複数行のスクリプトを実行
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo 他のアクションを追加してビルドし、
+          echo テストおよびデプロイを行ってください。
